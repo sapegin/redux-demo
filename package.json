@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bem-cn": "1.0.0",
+    "immutable": "~3.7.4",
     "lodash": "~3.10.0",
     "random-uuid-v4": "0.0.5",
     "react": "~0.13.3",
