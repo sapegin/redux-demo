@@ -18,7 +18,7 @@ export default React.createClass({
 			return messages.map((message) => {
 				return (
 					<div>
-						{message.get('text')}
+						{message.text}
 					</div>
 				);
 			});
