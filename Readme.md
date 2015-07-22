@@ -2,7 +2,7 @@
 
 * [React](http://facebook.github.io/react/)
 * [Redux](https://github.com/gaearon/redux)
-* (Soon) [Immutable.js](https://facebook.github.io/immutable-js/)
+* [Immutable.js](https://facebook.github.io/immutable-js/)
 
 
 ## Author
