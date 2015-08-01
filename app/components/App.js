@@ -1,18 +1,25 @@
 // Author: Artem Sapegin, http://sapegin.me, 2015
 
 import { bindActionCreators } from 'redux';
-import { Connector } from 'react-redux';
+import { connect } from 'react-redux';
 import Header from './Header';
 import Footer from './Footer';
 import MessageForm from './MessageForm';
 import MessagesList from './MessagesList';
 import * as MessagesActions from '../actions/MessagesActions';
 
-export default React.createClass({
+function select(state) {
+	return {
+		messages: state.messages
+	};
+}
+
+export default connect(select)(React.createClass({
 	displayName: 'App',
 
-	renderChild({ messages, dispatch }) {
-		const actions = bindActionCreators(MessagesActions, dispatch);
+	render() {
+		let { dispatch, messages } = this.props;
+		let actions = bindActionCreators(MessagesActions, dispatch);
 		return (
 			<div>
 				<Header/>
@@ -21,13 +28,5 @@ export default React.createClass({
 				<Footer/>
 			</div>
 		);
-	},
-
-	render() {
-		return (
-			<Connector select={state => ({ messages: state.messages })}>
-				{this.renderChild}
-			</Connector>
-		);
 	}
-});
+}));
