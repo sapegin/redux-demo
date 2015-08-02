@@ -14,12 +14,12 @@ export default React.createClass({
 
 	renderMessages() {
 		let { messages } = this.props;
-		if (messages && messages.size) {
+		if (messages.size) {
 			return messages.map((message) => {
 				return (
-					<div>
+					<li key={message.id}>
 						{message.text}
-					</div>
+					</li>
 				);
 			});
 		}
@@ -32,9 +32,9 @@ export default React.createClass({
 
 	render() {
 		return (
-			<div className={b}>
+			<ol className={b}>
 				{this.renderMessages()}
-			</div>
+			</ol>
 		);
 	}
 });

@@ -1,3 +1,3 @@
-import AppContainer from './components/AppContainer';
+import AppContainer from './containers/AppContainer';
 
 React.render(React.createElement(AppContainer), document.getElementById('app'));
