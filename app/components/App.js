@@ -8,13 +8,7 @@ import MessageForm from './MessageForm';
 import MessagesList from './MessagesList';
 import * as MessagesActions from '../actions/MessagesActions';
 
-function select(state) {
-	return {
-		messages: state.messages
-	};
-}
-
-export default connect(select)(React.createClass({
+export default connect(state => state)(React.createClass({
 	displayName: 'App',
 
 	render() {
