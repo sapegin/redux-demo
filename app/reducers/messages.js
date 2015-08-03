@@ -2,12 +2,8 @@
 
 import Immutable from 'immutable';
 import uuid from 'random-uuid-v4';
+import Message from '../models/message';
 import { RECEIVE_MESSAGES, ADD_MESSAGE, DELETE_MESSAGE } from '../constants/ActionTypes';
-
-let Message = Immutable.Record({
-	id: null,
-	text: ''
-});
 
 export default function messages(state = Immutable.List(), action) {
 	switch (action.type) {
