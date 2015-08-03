@@ -8,7 +8,7 @@ export function loadMessages() {
 			.then((resp) => {
 				resp.json()
 					.then((data) => {
-						dispatch(receiveMessages(data));
+						dispatch(receiveMessageList(data));
 					})
 				;
 			})
@@ -16,9 +16,9 @@ export function loadMessages() {
 	};
 }
 
-export function receiveMessages(data) {
+export function receiveMessageList(data) {
 	return {
-		type: types.RECEIVE_MESSAGES,
+		type: types.RECEIVE_MESSAGE_LIST,
 		data
 	};
 }
