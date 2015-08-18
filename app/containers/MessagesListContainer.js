@@ -8,13 +8,13 @@ let PT = React.PropTypes;
 export default React.createClass({
 	displayName: 'MessagesListContainer',
 	propTypes: {
-		messages: PT.instanceOf(Immutable.List)
+		messages: PT.instanceOf(Immutable.Record)
 	},
 
 	componentDidMount() {
 		let { messages, actions } = this.props;
-		if (!messages.size) {
-			actions.loadMessages();
+		if (!messages.items.size) {
+			actions.loadMessageList();
 		}
 	},
 

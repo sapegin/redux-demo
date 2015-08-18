@@ -9,11 +9,11 @@ let PT = React.PropTypes;
 export default React.createClass({
 	displayName: 'MessagesList',
 	propTypes: {
-		messages: PT.instanceOf(Immutable.List)
+		messages: PT.instanceOf(Immutable.Record)
 	},
 
 	renderMessages() {
-		let { messages } = this.props;
+		let messages = this.props.messages.items;
 		if (messages.size) {
 			return messages.map((message) => {
 				return (
